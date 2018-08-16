@@ -1,9 +1,6 @@
 package fr.thomasschaller.todoserveur;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -16,6 +13,11 @@ public class Tache {
     private String titre;
     private String details;
     private boolean isDone;
+
+
+    @OneToMany
+
+    private List<Tache> sousTaches;
 
     public Long getId() {
         return id;
@@ -48,4 +50,13 @@ public class Tache {
     public void setDone(boolean done) {
         isDone = done;
     }
+
+    public List<Tache> getSousTaches() {
+        return sousTaches;
+    }
+
+    public void setSousTaches(List<Tache> sousTaches) {
+        this.sousTaches = sousTaches;
+    }
+
 }
