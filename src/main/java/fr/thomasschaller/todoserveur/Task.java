@@ -16,8 +16,14 @@ public class Task {
     private Long priority;
 
 
-    @OneToMany
+    @ManyToOne
+    private Account account;
+
+    @OneToMany(mappedBy="parent")
     private List<Task> subTasks;
+
+    @ManyToOne
+    private Task parent;
 
     public Long getId() {
         return id;

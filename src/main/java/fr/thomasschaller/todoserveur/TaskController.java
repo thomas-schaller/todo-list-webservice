@@ -9,7 +9,7 @@ import java.util.Optional;
 @RestController   // This means that this class is a Controller
 @CrossOrigin
 @RequestMapping(path="/tasks") // This means URL's start with / (after Application path)
-public class TodoController {
+public class TaskController {
 
 
         @Autowired // This means to get the bean called TaskRepository
@@ -70,5 +70,17 @@ public class TodoController {
         public Iterable<Task> getAllTasks() {
             // This returns a JSON or XML with the users
             return taskRepository.findAll();
+        }
+
+        @GetMapping(path="/parent/{id}")
+        public Iterable<Task> getTaskByParentId(@PathVariable Long id)
+        {
+            Optional<Task> t =taskRepository.findById(id);
+            if (t.isPresent()){
+                return taskRepository.findByParent(t.get());
+            }
+                else{
+            return null;
+        }
         }
 }
