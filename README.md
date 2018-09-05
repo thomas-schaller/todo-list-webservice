@@ -1,4 +1,7 @@
+
+[![Build Status](https://travis-ci.org/thomas-schaller/todo-serveur.svg?branch=master)](https://travis-ci.org/thomas-schaller/todo-serveur)
 # todo-serveur
+
 la partie serveur d'une todo list en webservice REST.
 Ce projet me sert d'entrainement pour l'utilisation du framework Spring.
 
