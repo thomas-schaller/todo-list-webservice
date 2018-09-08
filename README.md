@@ -1,6 +1,6 @@
 
-[![Build Status](https://travis-ci.org/thomas-schaller/todo-serveur.svg?branch=master)](https://travis-ci.org/thomas-schaller/todo-serveur)
 # todo-serveur
+[![Build Status](https://travis-ci.org/thomas-schaller/todo-serveur.svg?branch=master)](https://travis-ci.org/thomas-schaller/todo-serveur)
 
 la partie serveur d'une todo list en webservice REST.
 Ce projet me sert d'entrainement pour l'utilisation du framework Spring.
@@ -11,8 +11,10 @@ JPA est utilisée par des annotations.
  Cette Base de données est pour l'instant une base en mémoire pour faciliter le développement et les tests.
 * Spring Boot est utilisé pour construire le projet en association avec maven.
 * Les Webservices sont définis à l'aide des annotations spring.
+* Spring security est utilisé pour l'authentification.
 
 ## Fonctionnalités
+
 
 Il faut avoir un compte et s'authentifier avant de pouvoir gérer ses tâches.
 

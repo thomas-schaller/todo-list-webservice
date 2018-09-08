@@ -1,8 +1,6 @@
 package fr.thomasschaller.todoserveur;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,6 +12,7 @@ public class Account {
     private List<Task> tasks;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     public String getLogin() {

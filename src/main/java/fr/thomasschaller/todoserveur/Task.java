@@ -1,5 +1,7 @@
 package fr.thomasschaller.todoserveur;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,13 +17,15 @@ public class Task {
     private boolean isDone;
     private Long priority;
 
-
+    @JsonIgnore
     @ManyToOne
     private Account account;
+
 
     @OneToMany(mappedBy="parent")
     private List<Task> subTasks;
 
+    @JsonIgnore
     @ManyToOne
     private Task parent;
 
@@ -71,5 +75,21 @@ public class Task {
 
     public void setPriority(Long priority) {
         this.priority = priority;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public Task getParent() {
+        return parent;
+    }
+
+    public void setParent(Task parent) {
+        this.parent = parent;
     }
 }
