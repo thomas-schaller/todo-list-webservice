@@ -1,9 +1,12 @@
 package fr.thomasschaller.todoserveur;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,35 +16,45 @@ import java.util.List;
 public class LoadDatabase {
 
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Bean
     CommandLineRunner initDatabase(AccountRepository accountRepo,TaskRepository taskRepo) {
         return args -> {
             List<Task> tasks = new ArrayList<>();
+            Account account = new Account();
+            account.setLogin("thomas");
+            account.setPassword(passwordEncoder.encode("password"));
+            accountRepo.save(account);
 
             Task task = new Task();
             task.setTitle("realiser une todo list.");
             task.setPriority(new Long(1));
-            taskRepo.save(task);
-            tasks.add(task);
-            task = new Task();
-            task.setTitle("sauvegarder des sous taches.");
+            task.setAccount(account);
             taskRepo.save(task);
             tasks.add(task);
 
-            Account account = new Account();
-            account.setLogin("thomas");
-            account.setPassword("password");
-            accountRepo.save(account);
-            tasks.get(0).setAccount(account);
+            task = new Task();
+            task.setTitle("sauvegarder des sous taches.");
+            task.setAccount(account);
             taskRepo.save(task);
-            tasks.get(1).setAccount(account);
+            tasks.add(task);
+
+            task = new Task();
+            task.setTitle("autre tache.");
+            task.setAccount(account);
             taskRepo.save(task);
+            tasks.add(task);
+
             account.setTasks(tasks);
+
+            log.info(account.getLogin()+ ": "+account.getTasks().toString());
             log.info("Preloading " + accountRepo.save(account));
 
             account = new Account();
             account.setLogin("david");
-            account.setPassword("thief");
+            account.setPassword(passwordEncoder.encode("thief"));
             accountRepo.save(account);
             task = new Task();
             task.setTitle("se synchoniser.");
@@ -50,6 +63,7 @@ public class LoadDatabase {
             tasks = new ArrayList<>();
             tasks.add(task);
             account.setTasks(tasks);
+            log.info(account.getLogin()+ ": "+account.getTasks().toString());
             log.info("Preloading " + accountRepo.save(account));
         };
     }
