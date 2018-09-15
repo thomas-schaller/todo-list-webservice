@@ -1,0 +1,6 @@
+<nav>
+	<a routerLink="/dashboard">Bureau </a>
+  <a routerLink="/tasks">Mes Taches </a>
+  <a routerLink="/new">Nouvelle Tache</a>
+</nav>
+<input type="textbox" placeholder="Title's Task" #titleBox id="title-box" /><button (click)="create(titleBox.value)">ajouter</button>

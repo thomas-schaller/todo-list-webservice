@@ -1,0 +1,11 @@
+<div>
+<h2>Mes Taches</h2>
+<ul class="tasks">
+<li *ngFor="let task of tasks" [class.done]="task.done == true" >
+		<input type="checkbox" [(ngModel)]="task.done" (click)="changeState(task)" />
+		<a routerLink="/detail/{{task.id}}">{{task.title}}<span class="badge" *ngIf="task.priority">{{task.priority}}</span></a>
+		<button class="delete" title="supprimer"
+      (click)="delete(task)">x</button>
+</li>
+</ul>
+</div>

@@ -1,0 +1,6 @@
+import {Task} from './task';
+
+export const TASKS: Task[] = [
+{title : 'faire les courses', isDone : true, description : 'les courses de la semaine'},
+{title : 'organiser séjour à Troyes', isDone : false}
+];

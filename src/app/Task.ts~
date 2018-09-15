@@ -1,0 +1,5 @@
+export Task {
+title : string;
+description : string;
+priority: integer;
+}

@@ -1,0 +1,27 @@
+<div *ngIf="task">
+
+  <h2>{{task.title}}</h2>
+  <div><span>id: </span>{{task.id}}</div>
+  <div>
+  		<label>Fait:
+  			<input type="checkbox" [(ngModel)]="task.done" />
+  		</label>
+  </div>
+  <div>
+    <label>Titre:
+      <input [(ngModel)]="task.title" placeholder="title"/>
+    </label>
+  </div>
+  <div>
+    <label>Description:
+      <textarea [(ngModel)]="task.description" placeholder="description"></textarea>
+    </label>
+  </div>  
+  <div>
+    <label>Priorité:
+      <input [(ngModel)]="task.priority" placeholder="0"/>
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+  <button (click)="goBack()">annuler</button>
+</div>

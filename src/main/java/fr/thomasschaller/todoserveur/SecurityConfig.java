@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
 @EnableWebSecurity
-@CrossOrigin
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -46,9 +45,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 
-    /* To allow Pre-flight [OPTIONS] request from browser */
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
-    }
 }

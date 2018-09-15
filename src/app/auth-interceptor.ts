@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import {
+  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
+} from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+/**  */
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler):
+    Observable<HttpEvent<any>> {
+    var encodedString = btoa("thomas:password");
+    const authReq = req.clone({ setHeaders: { Authorization: "Basic "+encodedString  ,realm: "thomasschaller"} });
+    return next.handle(authReq);
+  }
+}
+
