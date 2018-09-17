@@ -1,6 +1,7 @@
 
 # todo en client/serveur
 [![Build Status](https://travis-ci.org/thomas-schaller/todo-serveur.svg?branch=master)](https://travis-ci.org/thomas-schaller/todo-serveur)
+
 Ce projet me sert d'entrainement pour l'utilisation du framework Spring avec un front en angular.
 
 ## Rôle des dépendances
