@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController   // This means that this class is a Controller
-@CrossOrigin
 @RequestMapping(path="/tasks") // This means URL's start with / (after Application path)
 public class TaskController {
 
