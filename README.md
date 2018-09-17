@@ -1,9 +1,7 @@
 
-# todo-serveur
+# todo en client/serveur
 [![Build Status](https://travis-ci.org/thomas-schaller/todo-serveur.svg?branch=master)](https://travis-ci.org/thomas-schaller/todo-serveur)
-
-la partie serveur d'une todo list en webservice REST.
-Ce projet me sert d'entrainement pour l'utilisation du framework Spring.
+Ce projet me sert d'entrainement pour l'utilisation du framework Spring avec un front en angular.
 
 ## Rôle des dépendances
 * Spring Data JPA est utilisé pour la couche de persistance en liaison avec une bdd.
@@ -22,4 +20,8 @@ Une tâche peut avoir des sous-tâches, elle est alors finie uniquement
 si les sous-tâches sont finies. Elle appartien à un utilisateur.
 
 Une tâche a un titre, une description plus détaillée,
-une priorité, un contexte, une date de fin, une date de début.
+ un contexte, une date de fin, une date de début.
+
+Les taches à faire aujourd'hui sont à afficher en priorité puis celle de la semaine et enfin les autres.
+
+Une vue permet de déterminer les taches déjà réalisées par jour.
