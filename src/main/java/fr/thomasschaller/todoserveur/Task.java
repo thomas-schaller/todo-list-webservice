@@ -3,6 +3,7 @@ package fr.thomasschaller.todoserveur;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,9 @@ public class Task {
     private String title;
     private String description;
     private boolean isDone;
-    private Long priority;
+    private Date dueDate;
+
+
 
     @JsonIgnore
     @ManyToOne
@@ -69,13 +72,14 @@ public class Task {
         this.subTasks = subTasks;
     }
 
-    public Long getPriority() {
-        return priority;
+    public Date getDueDate() {
+        return dueDate;
     }
 
-    public void setPriority(Long priority) {
-        this.priority = priority;
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
+
 
     public Account getAccount() {
         return account;

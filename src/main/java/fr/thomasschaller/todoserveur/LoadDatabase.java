@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -22,6 +24,7 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(AccountRepository accountRepo,TaskRepository taskRepo) {
         return args -> {
+            Calendar c= Calendar.getInstance();
             List<Task> tasks = new ArrayList<>();
             Account account = new Account();
             account.setLogin("thomas");
@@ -30,20 +33,25 @@ public class LoadDatabase {
 
             Task task = new Task();
             task.setTitle("realiser une todo list.");
-            task.setPriority(new Long(1));
             task.setAccount(account);
+            task.setDueDate(new Date());
             taskRepo.save(task);
             tasks.add(task);
 
             task = new Task();
             task.setTitle("sauvegarder des sous taches.");
             task.setAccount(account);
+            c.set(2018,9,21);
+            task.setDueDate(c.getTime());
             taskRepo.save(task);
             tasks.add(task);
 
             task = new Task();
             task.setTitle("autre tache.");
             task.setAccount(account);
+            c = Calendar.getInstance();
+            c.set(2018,8,21);
+            task.setDueDate(c.getTime());
             taskRepo.save(task);
             tasks.add(task);
 
