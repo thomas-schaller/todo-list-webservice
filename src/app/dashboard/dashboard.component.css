@@ -1,12 +1,5 @@
     /* DashboardComponent's private CSS styles */
-    [class*='col-'] {
-      float: left;
-      padding-right: 20px;
-      padding-bottom: 20px;
-    }
-    [class*='col-']:last-of-type {
-      padding-right: 0;
-    }
+
     a {
       text-decoration: none;
     }
@@ -18,35 +11,36 @@
     h3 {
       text-align: center; margin-bottom: 0;
     }
-    h4 {
-      position: relative;
+
+	h2 {
+	color: white;
+	margin: 10px 0;
+	}
+	
+    .tree {
+        		margin: 20px 0;
+     			border-radius: 10px;
+     			border-style: solid;
+     			border-color: #369;
+     			background-color: #369;
+     			padding: 10px 0;
     }
-    .grid {
-      margin: 0;
-    }
-    .col-1-4 {
-      width: 25%;
-    }
+
     .module {
       padding: 20px;
-      text-align: center;
-      color: #eee;
+		background-color: white;
+      color: #369;
       max-height: 120px;
       min-width: 120px;
-      background-color: #607d8b;
-      border-radius: 2px;
+
     }
     .module:hover {
       background-color: #eee;
       cursor: pointer;
       color: #607d8b;
     }
-    .grid-pad {
-      padding: 10px 0;
-    }
-    .grid-pad > [class*='col-']:last-of-type {
-      padding-right: 20px;
-    }
+
+
     @media (max-width: 600px) {
       .module {
         font-size: 10px;
@@ -54,7 +48,7 @@
     }
     @media (max-width: 1024px) {
       .grid {
-        margin: 0;
+        margin: 10px 0;
       }
       .module {
         min-width: 60px;

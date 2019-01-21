@@ -30,18 +30,19 @@ public class LoadDatabase {
             account.setLogin("thomas");
             account.setPassword(passwordEncoder.encode("password"));
             accountRepo.save(account);
+            Date today = new Date();
 
             Task task = new Task();
             task.setTitle("realiser une todo list.");
             task.setAccount(account);
-            task.setDueDate(new Date());
+            task.setDueDate(today);
             taskRepo.save(task);
             tasks.add(task);
 
             task = new Task();
+            c.add(Calendar.DAY_OF_MONTH,2);
             task.setTitle("sauvegarder des sous taches.");
             task.setAccount(account);
-            c.set(2018,9,21);
             task.setDueDate(c.getTime());
             taskRepo.save(task);
             tasks.add(task);
@@ -50,7 +51,7 @@ public class LoadDatabase {
             task.setTitle("autre tache.");
             task.setAccount(account);
             c = Calendar.getInstance();
-            c.set(2018,8,21);
+            c.add(Calendar.DAY_OF_MONTH,9);
             task.setDueDate(c.getTime());
             taskRepo.save(task);
             tasks.add(task);

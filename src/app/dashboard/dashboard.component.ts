@@ -18,6 +18,6 @@
      
       getTasks(): void {
         this.taskService.getTasks()
-          .subscribe(tasks => this.tasks = tasks.slice(1, 5));
+          .subscribe(tasks => this.tasks = tasks);
       }
     }

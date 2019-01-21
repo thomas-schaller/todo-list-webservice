@@ -1,7 +1,7 @@
+<div class="tree">
 <h2>Taches Prioritaires</h2>
-<div class="grid grid-pad">
-  <a *ngFor="let task of tasks" class="col-1-4" routerLink="/detail/{{task.id}}">
-    <div class="module task">
+  <a *ngFor="let task of tasks" routerLink="/detail/{{task.id}}">
+    <div class="module">
       <h4>{{task.title}}</h4>
     </div>
   </a>

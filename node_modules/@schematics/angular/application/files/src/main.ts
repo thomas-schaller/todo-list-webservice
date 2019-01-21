@@ -9,10 +9,11 @@
 <%= experimentalIvy ? '// ' : '' %>}
 <%= experimentalIvy ? '// ' : '' %>
 <%= experimentalIvy ? '// ' : '' %>platformBrowserDynamic().bootstrapModule(AppModule)
-<%= experimentalIvy ? '// ' : '' %>  .catch(err => console.log(err));
+<%= experimentalIvy ? '// ' : '' %>  .catch(err => console.error(err));
 <% if (experimentalIvy) { %>
 import { AppComponent } from './app/app.component';
 import { ɵrenderComponent as renderComponent } from '@angular/core';
 
 renderComponent(AppComponent);
+
 <% } %>

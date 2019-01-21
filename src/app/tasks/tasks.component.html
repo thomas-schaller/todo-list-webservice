@@ -1,15 +1,27 @@
-<div>
-<h2>Mes Taches</h2>
+<div class="tree">
+<h2>Mes Taches du jour</h2>
 <ul class="tasks">
 <li *ngFor="let task of getTodayTasks()" [class.done]="task.done == true" >
 		<input type="checkbox" [(ngModel)]="task.done" (click)="changeState(task)" />
-		<a routerLink="/detail/{{task.id}}">{{task.title}}<span class="badge" *ngIf="task.dueDate">{{task.dueDate}}</span></a>
+		<a routerLink="/detail/{{task.id}}">{{task.title}}<span class="high" *ngIf="task.dueDate">{{task.dueDate}}</span></a>
 		<button class="delete" title="supprimer"
       (click)="delete(task)">x</button>
 </li>
-    <li *ngFor="let task of tasks" [class.done]="task.done == true" >
+</ul>
+<h2>Mes Taches de la semaine</h2>
+<ul class="tasks">
+    <li *ngFor="let task of getWeekTasks()" [class.done]="task.done == true" >
         <input type="checkbox" [(ngModel)]="task.done" (click)="changeState(task)" />
-        <a routerLink="/detail/{{task.id}}">{{task.title}}<span class="badge" *ngIf="task.dueDate">{{task.dueDate}}</span></a>
+        <a routerLink="/detail/{{task.id}}">{{task.title}}<span class="medium" *ngIf="task.dueDate">{{task.dueDate}}</span></a>
+        <button class="delete" title="supprimer"
+                (click)="delete(task)">x</button>
+    </li>
+</ul>
+<h2>Mes Taches restantes</h2>
+<ul class="tasks">
+    <li *ngFor="let task of getLongTermTasks()" [class.done]="task.done == true" >
+        <input type="checkbox" [(ngModel)]="task.done" (click)="changeState(task)" />
+        <a routerLink="/detail/{{task.id}}">{{task.title}}<span class="low" *ngIf="task.dueDate">{{task.dueDate}}</span></a>
         <button class="delete" title="supprimer"
                 (click)="delete(task)">x</button>
     </li>

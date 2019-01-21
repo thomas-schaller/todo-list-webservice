@@ -1,0 +1,67 @@
+    /* DashboardComponent's private CSS styles */
+.high{
+	background-color: red;
+	color: white;
+}
+.medium{
+	background-color: yellow;
+	color: black;
+}
+.low{
+	background-color: green;
+	color: white;
+}
+    a {
+      text-decoration: none;
+    }
+    *, *:after, *:before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    h3 {
+      text-align: center; margin-bottom: 0;
+    }
+
+	h2 {
+	color: white;
+	margin: 10px 0;
+	}
+	
+    .tree {
+        		margin: 20px 0;
+     			border-radius: 10px;
+     			border-style: solid;
+     			border-color: #369;
+     			background-color: #369;
+     			padding: 10px 0;
+    }
+
+    .module {
+      padding: 20px;
+		background-color: white;
+      color: #369;
+      max-height: 120px;
+      min-width: 120px;
+
+    }
+    .module:hover {
+      background-color: #eee;
+      cursor: pointer;
+      color: #607d8b;
+    }
+
+
+    @media (max-width: 600px) {
+      .module {
+        font-size: 10px;
+        max-height: 75px; }
+    }
+    @media (max-width: 1024px) {
+      .grid {
+        margin: 10px 0;
+      }
+      .module {
+        min-width: 60px;
+      }
+    }
