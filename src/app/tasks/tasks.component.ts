@@ -42,11 +42,9 @@ this.taskService.delete(task).subscribe();
 
    getTodayTasks() : Array<Task>
     {
-        const today: Date = new Date( Date.now() );
         let tasklist = new Array<Task>();
         if (this.tasks!== undefined ){
-        const beginToday: Date = new Date( );
-        beginToday.setDate(today.getDate()+1);
+           const beginToday: Date = this.getTodayEnding();
         for (let task of this.tasks)
         { if ( task !== undefined &&  task.dueDate !== null){
             var tempDate = new Date(task.dueDate );
@@ -60,11 +58,8 @@ this.taskService.delete(task).subscribe();
 
    getWeekTasks() : Array<Task>
     {
-        const today: Date = new Date( Date.now() );
-        const beginToday: Date = new Date( );
-        beginToday.setDate(today.getDate()+1);
-        const endWeek: Date = new Date(  );
-        endWeek.setDate(today.getDate()+8);
+        const beginToday: Date = this.getTodayEnding();
+        const endWeek: Date = this.getWeekEnding() ;
         let tasklist = new Array<Task>();
 			if (this.tasks!== undefined ){
         for (let task of this.tasks)
@@ -81,9 +76,7 @@ this.taskService.delete(task).subscribe();
 
    getLongTermTasks() : Array<Task>
     {
-        const today: Date = new Date( Date.now() );
-        const endWeek: Date = new Date(  );
-        endWeek.setDate(today.getDate()+8);
+        const endWeek: Date = this.getWeekEnding() ;
 
         let tasklist = new Array<Task>();
 			if (this.tasks!== undefined ){
@@ -105,7 +98,7 @@ this.taskService.delete(task).subscribe();
     const today: Date = new Date( Date.now() );
     const beginToday: Date = new Date( );
     beginToday.setDate(today.getDate()+1);
-    removeTime(beginToday);
+    this.removeTime(beginToday);
     return beginToday;
 
     }
@@ -114,8 +107,8 @@ this.taskService.delete(task).subscribe();
     {
     const today: Date = new Date( Date.now() );
     const beginToday: Date = new Date( );
-    beginToday.setDate(today.getDate()+1);
-    removeTime(beginToday);
+    beginToday.setDate(today.getDate()+8);
+    this.removeTime(beginToday);
     return beginToday;
 
     }

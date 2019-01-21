@@ -21,8 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .httpBasic().realmName("thomasschaller").and()
-                .csrf().disable() // if csrf is not disable, only GET request seems to be accepted by the server
-                .authorizeRequests().antMatchers("/**").authenticated();
+                .authorizeRequests().anyRequest().authenticated();
 
 
     }
