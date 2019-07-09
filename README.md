@@ -4,6 +4,7 @@
 
 Ce projet me sert d'entrainement pour l'utilisation du framework Spring avec un front en angular.
 
+Lien vers un déploiement du client : https://thomas-schaller.github.io/todo-list-webservice/tasks
 ## Rôle des dépendances
 * Spring Data JPA est utilisé pour la couche de persistance en liaison avec une bdd.
 JPA est utilisée par des annotations.
