@@ -1,5 +1,7 @@
 package fr.thomasschaller.todoserveur;
 
+import fr.thomasschaller.todoserveur.model.Account;
+import fr.thomasschaller.todoserveur.model.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

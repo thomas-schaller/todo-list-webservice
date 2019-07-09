@@ -1,8 +1,7 @@
-package fr.thomasschaller.todoserveur;
+package fr.thomasschaller.todoserveur.model;
 
+import fr.thomasschaller.todoserveur.model.Account;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
 
 public interface AccountRepository extends CrudRepository<Account, Long> {
     Account findByLogin(final String login);

@@ -1,10 +1,13 @@
 package fr.thomasschaller.todoserveur;
 
+import fr.thomasschaller.todoserveur.model.Account;
+import fr.thomasschaller.todoserveur.model.AccountRepository;
+import fr.thomasschaller.todoserveur.model.Task;
+import fr.thomasschaller.todoserveur.model.TaskRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -22,7 +25,7 @@ public class LoadDatabase {
     PasswordEncoder passwordEncoder;
 
     @Bean
-    CommandLineRunner initDatabase(AccountRepository accountRepo,TaskRepository taskRepo) {
+    CommandLineRunner initDatabase(AccountRepository accountRepo, TaskRepository taskRepo) {
         return args -> {
             Calendar c= Calendar.getInstance();
             List<Task> tasks = new ArrayList<>();

@@ -1,4 +1,4 @@
-package fr.thomasschaller.todoserveur;
+package fr.thomasschaller.todoserveur.model;
 
 import javax.persistence.*;
 import java.util.List;

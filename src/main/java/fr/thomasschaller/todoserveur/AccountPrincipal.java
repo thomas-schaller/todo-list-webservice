@@ -1,6 +1,6 @@
 package fr.thomasschaller.todoserveur;
 
-import fr.thomasschaller.todoserveur.Account;
+import fr.thomasschaller.todoserveur.model.Account;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

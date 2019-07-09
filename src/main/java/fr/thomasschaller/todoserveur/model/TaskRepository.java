@@ -1,5 +1,7 @@
-package fr.thomasschaller.todoserveur;
+package fr.thomasschaller.todoserveur.model;
 
+import fr.thomasschaller.todoserveur.model.Account;
+import fr.thomasschaller.todoserveur.model.Task;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

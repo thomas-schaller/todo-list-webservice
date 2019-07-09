@@ -1,5 +1,9 @@
-package fr.thomasschaller.todoserveur;
+package fr.thomasschaller.todoserveur.resources;
 
+import fr.thomasschaller.todoserveur.model.Account;
+import fr.thomasschaller.todoserveur.model.AccountRepository;
+import fr.thomasschaller.todoserveur.model.Task;
+import fr.thomasschaller.todoserveur.model.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
