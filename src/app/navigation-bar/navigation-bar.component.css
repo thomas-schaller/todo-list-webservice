@@ -1,0 +1,88 @@
+
+.ajout {
+    padding: 10px;
+    background-color: #369;
+    color: white;
+    max-height: 120px;
+    min-width: 120px;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media (max-width: 600px) {
+    .ajout {
+        font-size: 10px;
+        max-height: 75px; }
+}
+@media (max-width: 1024px) {
+
+    .ajout {
+        min-width: 60px;
+    }
+}
+input {
+    width: 90%;
+    height: 50px;
+    float: left;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    text-indent: 18px;
+    padding: 0 60px 0 0;
+    background: rgba(0,0,255,0.2);
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+button {
+    width: 50px;
+    height: 50px;
+
+    position:relative;
+    top:1px;
+    right:20px;
+    z-index:2;
+
+    border-radius: 25px;
+    background: #fff;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button svg {
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: -8px 0 0 -8px;
+}
+
+button svg .fill {
+    fill: blue;
+}
