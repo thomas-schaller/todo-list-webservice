@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fr.thomas-schaller</groupId>
-	<artifactId>todo-serveur</artifactId>
+	<artifactId>todo-webservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>todo-serveur</name>
+	<name>todo-webservice</name>
 	<description>Serveur Web pour gérer des liste de choses à faire</description>
 
 	<parent>
