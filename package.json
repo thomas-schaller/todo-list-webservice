@@ -21,7 +21,7 @@
     "@angular/router": "^8.0.2",
     "ajv": "^6.10.0",
     "angular-drag-and-drop-lists": "^2.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "core-js": "^2.6.9",
     "rxjs": "^6.5.2",
     "sha.js": "^2.4.11",
